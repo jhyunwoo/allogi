@@ -1,0 +1,25 @@
+{
+  "name": "allogi",
+  "version": "0.1.0",
+  "description": "This is a JavaScript package that you want to provide all the capabilities provided by Logism. It will provide various functions such as calculation using logical circuits, simplification of logical expressions, and generation of logical expressions through truth tables.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "logic",
+    "gate",
+    "logic",
+    "gate",
+    "logism",
+    "logic",
+    "gate",
+    "simplify",
+    "truth",
+    "table",
+    "logical",
+    "expression"
+  ],
+  "author": "jhyunwoo <jhyunwoo@moveto.kr>",
+  "license": "ISC"
+}
