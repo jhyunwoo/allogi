@@ -1,4 +1,4 @@
-name: Versioning & Npm Publish
+name: Publish to NPM
 
 on:
   push:
@@ -6,34 +6,19 @@ on:
       - main
 
 jobs:
-  update-publish:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
         with:
-          ref: ${{ github.head_ref }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
-      # 깃헙 액션 봇으로 npm version 올린 후 커밋
-      - name: Commit files
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          npm version patch
-      # 올라간 버전을 원격 저장소에 커밋
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          tags: true
-          branch: ${{ github.ref }}
-      # 빌드 후 npm에 배포.
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Npm Publish
-        run: |
-          npm ci
-          npm run build
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_AUTH_TOKEN }}
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install dependencies and build 🔧
+        run: npm ci && npm run build
+      - name: Publish package on NPM 📦
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
