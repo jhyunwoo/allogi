@@ -1,8 +1,6 @@
-import { Input, Output } from "@/lib/input";
-import { truthTable } from "../lib/truthTable";
+import { Input } from "../lib/init.js";
+import { truthTable } from "../packages/truth-table/index.js";
 
 const A = new Input("A");
 const B = new Input("B");
-const F = new Output("F");
-
-const truthTable = truthTable(A + B);
+const result = truthTable(A + B);
