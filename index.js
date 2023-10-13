@@ -1,3 +1,4 @@
-function operation() {
-  console.log("Test Script");
-}
+import Input from "@/lib/Input";
+import Output from "@/lib/Output";
+
+export { Input, Output };
