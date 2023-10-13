@@ -21,7 +21,7 @@ jobs:
           npm version patch
       # 올라간 버전을 원격 저장소에 커밋
       - name: Push changes
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
           tags: true
           branch: ${{ github.ref }}
