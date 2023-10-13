@@ -33,8 +33,7 @@ jobs:
           git push
           git add package.json
           git commit -m "${{ (steps.commit.outputs.content) }}"
-          git push
           echo ${{ (steps.commit.outputs.content) }}
-          pnpm publish
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
