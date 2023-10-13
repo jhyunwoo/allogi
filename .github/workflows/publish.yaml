@@ -32,6 +32,7 @@ jobs:
         run: |
           git add package.json
           git commit -m "${{ (steps.commit.outputs.content) }}"
+          git push
           echo ${{ (steps.commit.outputs.content) }}
           pnpm publish
         env:
