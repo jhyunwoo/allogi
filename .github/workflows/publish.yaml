@@ -30,6 +30,7 @@ jobs:
       # version을 변경한 package.json을 commit, 바뀐 버전으로 commit message 작성 후 push
       - name: Deploy and Push
         run: |
+          git push
           git add package.json
           git commit -m "${{ (steps.commit.outputs.content) }}"
           git push
