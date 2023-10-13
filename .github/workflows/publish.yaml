@@ -18,6 +18,8 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - name: Patch
         run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           npm version patch > version.txt
       # 저장한 버전 파일을 읽어 변수로 사용하기 위해 외부 action을 사용 -> setps.{id}.outputs.content로 사용 가능
       - name: Read version.txt
@@ -28,8 +30,6 @@ jobs:
       # version을 변경한 package.json을 commit, 바뀐 버전으로 commit message 작성 후 push
       - name: Deploy and Push
         run: |
-          git config --global user.name "${GITHUB_ACTOR}"
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add package.json
           git commit -m "${{ (steps.commit.outputs.content) }}"
           echo ${{ (steps.commit.outputs.content) }}
