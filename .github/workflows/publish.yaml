@@ -17,6 +17,6 @@ jobs:
                   node-version: "20.x"
                   registry-url: "https://registry.npmjs.org"
             - name: Publish package on NPM 📦
-              run: pnpm publish
+              run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
