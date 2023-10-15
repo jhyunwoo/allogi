@@ -209,5 +209,5 @@ export function truthTable(expression) {
     notCalcualter(exp)
     expCalcualter(exp, "AND")
     expCalcualter(exp, "OR")
-    console.log(exp[0])
+    return exp[0]
 }

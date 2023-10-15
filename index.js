@@ -1,3 +1,3 @@
-import { truthTable } from "./packages/truth-table"
-import { logicExpression } from "./packages/logic-expression"
+import { truthTable } from "./packages/truth-table/index.js"
+import { logicExpression } from "./packages/logic-expression/index.js"
 export { truthTable, logicExpression }
