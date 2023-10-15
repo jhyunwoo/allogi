@@ -16,6 +16,22 @@ yarn add allogi
 pnpm add allogi
 ```
 
+### Logic Expression to Truth Table
+
+```Javascript
+// Truth Table only support AND, OR, NOT Gate.
+// You can use Only () brackets! NO {} and []
+import { truthTable } from "allogi"
+console.log(truthTable("A+B"))
+/**
+ * {
+ *   exp: 'a OR b',
+ *   input: [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 1, 1 ] ],
+ *   output: [ 0, 1, 1, 1 ]
+ * }
+ */
+```
+
 ## Roadmap
 
 1. Logical expression for generating truth tables

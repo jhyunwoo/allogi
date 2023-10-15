@@ -109,7 +109,7 @@ function expCalcualter(exp, operator) {
             exp[index + 1].output
         )
         exp.splice(index - 1, 3, {
-            id: exp[index - 1].id + " " + operator + " " + exp[index + 1].id,
+            exp: exp[index - 1].exp + " " + operator + " " + exp[index + 1].exp,
             input: exp[index - 1].input,
             output: result,
         })
@@ -121,7 +121,7 @@ function notCalcualter(exp) {
         const index = findOpertor(exp, "NOT")
         const result = NOT(exp[index + 1]?.output)
         exp.splice(index, 2, {
-            id: "NOT (" + exp[index + 1].id + ")",
+            exp: "NOT (" + exp[index + 1].exp + ")",
             input: exp[index + 1].input,
             output: result,
         })
@@ -174,7 +174,7 @@ export function truthTable(expression) {
     for (let i = 0; i < expLower.length; i += 1) {
         if (letters.has(expLower[i])) {
             exp.push({
-                id: expLower[i],
+                exp: expLower[i],
                 input: input,
                 output: variableOutput(
                     getPropertyOrder(variables, expLower[i]),
