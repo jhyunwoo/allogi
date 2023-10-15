@@ -24,26 +24,26 @@ export function logicExpression(truthTable) {
     return minimizedExpression
 }
 
-if (varNum == 2) {
-    const truthTable = [
-        ["0 0", "0 1", "1 0", "1 1"],
-        [0, 0],
-    ]
-    truthTable[1] = [1, 1, 0, 0]
-    const outputValues = truthTable[1]
+// if (varNum == 2) {
+//     const truthTable = [
+//         ["0 0", "0 1", "1 0", "1 1"],
+//         [0, 0],
+//     ]
+//     truthTable[1] = [1, 1, 0, 0]
+//     const outputValues = truthTable[1]
 
-    // 진리표 출력
-    console.log("A | B | F")
-    console.log("----------------")
-    for (let i = 0; i < 2 ** varNum; i++) {
-        const inputs = truthTable[0][i].split(" ")
-        const output = outputValues[i]
-        console.log(`${inputs[0]} | ${inputs[1]} | ${output}`)
-    }
+//     // 진리표 출력
+//     console.log("A | B | F")
+//     console.log("----------------")
+//     for (let i = 0; i < 2 ** varNum; i++) {
+//         const inputs = truthTable[0][i].split(" ")
+//         const output = outputValues[i]
+//         console.log(`${inputs[0]} | ${inputs[1]} | ${output}`)
+//     }
 
-    const minimizedExpression = logicExpression(truthTable)
-    console.log("Minimized Expression:", minimizedExpression)
-}
+//     const minimizedExpression = logicExpression(truthTable)
+//     console.log("Minimized Expression:", minimizedExpression)
+// }
 
 // if (varNum == 3) {
 //     const truthTable = [

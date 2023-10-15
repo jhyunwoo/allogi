@@ -1,6 +1,6 @@
 {
     "name": "allogi",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "This is a JavaScript package that you want to provide all the capabilities provided by Logism. It will provide various functions such as calculation using logical circuits, simplification of logical expressions, and generation of logical expressions through truth tables.",
     "main": "index.js",
     "scripts": {
