@@ -1,4 +1,3 @@
-import Input from "@/lib/Input";
-import Output from "@/lib/Output";
-
-export { Input, Output };
+import { truthTable } from "./packages/truth-table"
+import { logicExpression } from "./packages/logic-expression"
+export { truthTable, logicExpression }

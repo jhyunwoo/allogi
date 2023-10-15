@@ -1,24 +1,22 @@
 name: Publish to NPM
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: "20.x"
-          registry-url: "https://registry.npmjs.org"
-      - name: Publish package on NPM 📦
-        run: \
-          pnpm add
-          pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Setup Node
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "20.x"
+                  registry-url: "https://registry.npmjs.org"
+            - name: Publish package on NPM 📦
+              run: pnpm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
